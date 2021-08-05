@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid wide hide-on-mobile">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                       <li class="header__navbar-item">Hotline: 0345290616</li>
+                    </ul>
+                    <ul class="header__navbar-list">
+                    
+
+                    <ul class="header__navbar-list header__navbar-list-1">
+                       <a href="" class="header__navbar-item-link">
+                        <li class="header__navbar-item"><i class="header__navbar-icon fab fa-facebook"></i></li>
+
+                       </a>
+                       
+                       <a href="" class="header__navbar-item-link">
+                        <li class="header__navbar-item"><i class="header__navbar-icon fab fa-twitter"></i></li>
+
+                       </a>
+                       <a href="" class="header__navbar-item-link">
+                        <li class="header__navbar-item"><i class="header__navbar-icon fab fa-instagram-square"></i></li>
+
+                       </a>
+                       <a href="" class="header__navbar-item-link">
+                        <li class="header__navbar-item"><i class="header__navbar-icon fab fa-google"></i></li>
+
+                       </a>
+                    </ul>
+                    <ul class="header__navbar-list header__navbar-list-2 ">
+                       <a href="" class="header__navbar-item-link dang-ky">
+                        <li class="header__navbar-item">Đăng Ký </li>
+
+                       </a>
+                       
+                       <a href="" class="header__navbar-item-link dang-nhap">
+                        <li class="header__navbar-item">Đăng Nhập </li>
+
+                       </a>
+                    </ul>
+                </ul>
+                      
+                    
+                </nav>
+               
+
+            </div>
+            <div class="header__underline hide-on-mobile"></div>
+
+            <div class="grid wide hide-on-mobile">
+                <nav class="header__navbar">
+                    <a href="" class="header__navbar-item-link">
+                       <img src="https://fs-07.web4s.vn/uploads/plugin/setting/3/th-i-trang-cong-s-logo-1.png" alt="Logo">
+                       </a>
+                    
+                    <ul class="header__navbar-list">
+                       
+                       </a>
+                       <a href="index.html" class="header__navbar-item-link header__navbar-item-link-1 ">
+                        <li class="header__navbar-item-2" >TRANG CHỦ</li>
+                        </a>
+                        <a href="produce.html" class="header__navbar-item-link header__navbar-item-link-1 produce-link">
+                            <li class="header__navbar-item-2">GIỚI THIỆU</li>
+                            </a>
+                            <a href="sanpham.html" class="header__navbar-item-link header__navbar-item-link-1">
+                                <li class="header__navbar-item-2">SẢN PHẨM</li>
+                                </a>
+                                <a href="news.html" class="header__navbar-item-link header__navbar-item-link-1 news-link">
+                                    <li class="header__navbar-item-2">TIN TỨC</li>
+                                    </a>
+                                    <a href="collection.html" class="header__navbar-item-link header__navbar-item-link-1">
+                                        <li class="header__navbar-item-2">BỘ SƯU TẬP</li>
+                                        </a>
+                                        <a href="contact.html" class="header__navbar-item-link header__navbar-item-link-1">
+                                            <li class="header__navbar-item-2">LIÊN HỆ</li>
+                                            </a>
+
+                    </ul>
+                    <ul class="header__navbar-list">
+                        <a href="" class="header__navbar-item-link search-link">
+                            <li class="header__navbar-item"><i class="header__navbar-icon fas fa-search"></i></li>
+                        </a>
+                        <a href="" class="header__navbar-item-link">
+                            <li class="header__navbar-item"><i class="header__navbar-icon fas fa-sync-alt"></i></li>
+                        </a>
+                        <a href="" class="header__navbar-item-link cart-link">
+                            <li class="header__navbar-item"><i class="header__navbar-icon fas fa-shopping-bag"></i></li>
+                        </a>
+                        <div class="header-timkiem">
+                            <div class="header-timkiem-wrap">
+                                <input type="text" class="o-tim-kiem" placeholder="Từ khóa tìm kiếm">
+                                <button class="btn-search"> <i class="fas fa-search"></i></button>
+                               
+                            </div>
+                        </div>
+
+                        <div class="header-cart">
+                            <p>Không có sản phẩm nào trong giỏ hàng</p>
+                        </div>
+
+
+
+
+                    </ul>
+                    </nav>
+                    </div>
+
+                     <!-- mobile -->
+                     <div class="grid hide-on-pc">
+                        <div class="row">
+                            <div class="col c-6 ">
+                                
+                                    <div class="header__navbar-list__mobile">
+                                       <p class="header__navbar-item__mobile">Hotline: 0345290616</p>
+                                    </div>
+                            </div>
+
+                            <div class="col c-6">
+                                <div class="header__navbar-list__mobile">
+                                        <a href="" class="header__navbar-item-link dang-ky">
+                                            
+                                         Đăng Ký /
+                 
+                                        </a>
+                                        
+                                        <a href="" class="header__navbar-item-link dang-nhap">
+                                        Đăng Nhập
+                 
+                                        </a>
+                                </div>
+
+                            </div>
+
+                                   
+
+                               
+
+                            </div>
+                        </div>
+                        <div class="header__underline hide-on-pc"></div>
+
+                        <div class="logo__on-mobile hide-on-pc">
+                            <div class="logo__on-mobile-wrap">
+                            <a href="" class="header__navbar-logo-link pd-mobile  ">
+                                <img src="https://fs-07.web4s.vn/uploads/plugin/setting/3/th-i-trang-cong-s-logo-1.png" alt="Logo">
+                            </a>
+                          </div>
+                        </div>
+                   
+
+
+                    <div class="grid hide-on-pc">
+                        <div class="row bc">
+                            <div class="col c-3">
+                                <div class="bar-mobile">
+                                    <a href="" class="btn-menu-main"><i class="fas fa-bars"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="col c-9 pd-right-mobile">
+                                <div class="three-icon-mobile">
+                                    
+                                <a href="" class="header__navbar-item-link search-link">
+                                    <li class="header__navbar-item"><i class="header__navbar-icon fas fa-search"></i></li>
+                                    
+                                   
+                                </a>
+                                <a href="" class="header__navbar-item-link">
+                                    <li class="header__navbar-item"><i class="header__navbar-icon fas fa-sync-alt"></i></li>
+                                </a>
+                                <a href="" class="header__navbar-item-link cart-link">
+                                    <li class="header__navbar-item"><i class="header__navbar-icon fas fa-shopping-bag"></i></li>
+                                </a>
+                                <div class="header-timkiem">
+                                    <div class="header-timkiem-wrap">
+                                        <input type="text" class="o-tim-kiem" placeholder="Từ khóa tìm kiếm">
+                                        <button class="btn-search"> <i class="fas fa-search"></i></button>
+                                       
+                                    </div>
+                                </div>
+        
+                                <div class="header-cart">
+                                    <p>Không có sản phẩm nào trong giỏ hàng</p>
+                                </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+            
+
+           
+        </header>
+
+
+        <!-- BO SUU TAP -->
+        <div class="bo-suu-tap pd-left pd-right">
+            <p>Trang chủ > Bộ sưu tập</p>
+        </div>
+
+
+         <!-- FOOTER -->
+
+         <footer class="footer" >
+            <div class="footer__wrap pd-body">
+                <div class="grid wide">
+                    <div class="ul-wrap">
+                    <ul class="footer-list">
+    
+                         <li class="footer-item footer-item-active">Về chúng tôi</li>
+                        <li class="footer-item">4S Fashion - Thời trang công sở đem lại sự tự tin, trẻ<br> trung, phong cách cho mỗi ngày</li>
+                        <li class="footer-item"><i class="footer__icon fas fa-map-marker-alt"></i>  32 Võ Văn Dũng, Đống Đa, Hà Nội</li>
+                        <li class="footer-item"><i class="footer__icon fas fa-phone-square-alt"></i>1900 2116</li>
+                        <li class="footer-item"><i class="footer__icon fas fa-phone-square-alt"></i> (04) 7308 6680</li>
+                        <li class="footer-item"><i class="footer__icon fas fa-envelope-square"></i>web.nhanhoa@gmail.com</li>
+                    </ul>
+                    <ul class="footer-list">
+                        
+                        <li class="footer-item footer-item-active">Thương hiệu</li>
+                        <li class="footer-item">Giới thiệu</li>
+                        <li class="footer-item">Tuyển dụng</li>
+                        <li class="footer-item">Hệ thống cửa hàng</li>
+                        <li class="footer-item">Liên hệ</li>
+                       
+                    </ul>
+                    <ul class="footer-list">
+                        <li class="footer-item footer-item-active">Hỗ trợ</li>
+                        <li class="footer-item">FAQs-hỏi đáp</li>
+                        <li class="footer-item">Chính sách vận chuyển</li>
+                        <li class="footer-item">Hướng dẫn thanh toán</li>
+                        <li class="footer-item">Kiểm tra đơn hàng</li>
+                        <li class="footer-item">Quy định đổi hàng</li>
+                    </ul>
+                    <ul class="footer-list ">
+                        <li class="footer-item footer-item-active">Bản đồ</li>
+                        
+                        <li class="footer-item">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d931.1064229483302!2d105.82312617096011!3d21.015646428028134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7952f855d3%3A0x368ab606a7edf91a!2zVsO1IFbEg24gRMWpbmcsIMOUIENo4bujIEThu6thLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1463568434813" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                        </li>
+                        <li class="footer-item">
+                            <div class="payment-support">
+                                <img src="./img/payment-support.png">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+    
+        </footer>
+    </div>
+
+        <!-- MODAL -->
+<!-- DANG NHAP -->
+<div class="modal">
+    <div class="modal-container ">
+        <header class="modal-header Login">
+            <h4>ĐĂNG NHẬP</h4>
+            <div class="icon-modal-login">
+            <i class=" close-icon fas fa-times"></i>
+           </div>
+
+        </header>
+
+        <div class="modal-body">
+           <form id="frm-login" class="form-dn" method="POST" action="https://fs-07.web4s.vn/member/manager-account/ajax-login" novalidate="novalidate">
+               <div class="form-group"> 
+                   <input class="form-control required" name="username" type="text" placeholder="Tên đăng nhập hoặc email" autocomplete="false" aria-required="true">
+               </div>
+
+               <div class="form-group"> 
+                   <input class="form-control required" name="password" type="password" placeholder="Mật khẩu" autocomplete="false" aria-required="true">
+               </div>
+
+               <div class="form-group col-md-12 no-padding clearfix hidden"> 
+                   <label class="control-label"> <input type="checkbox" name="remember_login"> Lưu thông tin </label>
+               </div>
+
+               <div class="form-group"> 
+                   <button class="bt btn-default txt-upper btn-submit " type="submit"> 
+                        <span class="name"> Đăng nhập </span>
+                   </button>
+               </div>
+
+               <div class="form-group">
+                   <p class="hoac">OR</p>
+               </div>
+
+               <div class="form-group">
+                   <div class="fb">
+                     
+                       <span>   <i class="fab fa-facebook"></i> Đăng nhập bằng facebook</span>
+                   </div>
+                   <div class="gg">
+
+                       <span> <i class="google-icon fab fa-google"></i> Đăng nhập bằng google</span>
+                   </div>
+                   <div class="login-link">
+                       <a href="">Đăng ký</a>
+                       <a href="">Quên mật khẩu</a>
+                   </div>
+
+               </div>
+
+                  
+           </form>
+
+        </div>
+    </div>
+
+    </div>
+
+     <!-- DANG KY -->
+
+     <div class="modal">
+
+    <div class="modal-container Regis ">
+       <header class="modal-header">
+           <h4>ĐĂNG KÝ</h4>
+           <div class="icon-modal-regis">
+           <i class=" close-icon fas fa-times"></i>
+          </div>
+
+       </header>
+
+       <div class="modal-body">
+          <form id="frm-login" class="form-dn" method="POST" action="https://fs-07.web4s.vn/member/manager-account/ajax-login" novalidate="novalidate">
+              <div class="grid">
+                  <div class="row">
+                      <div class="col l-6">
+                           <div class="form-group "> 
+                               <input class="form-control required" name="username" type="text" placeholder="Tên đăng nhập" autocomplete="false" aria-required="true" >
+                              
+                           </div>
+           
+                           <div class="form-group "> 
+                               <input class="form-control required" name="password" type="password" placeholder="Mật khẩu"  aria-required="true">
+                             
+                           </div>
+           
+                           <div class="form-group "> 
+                           <input type="email" class="form-control required" name="email" placeholder="Email">
+                           </div>
+
+                           <div class="form-group "> 
+                               <input type="text" class="form-control required" name="email" placeholder="Tỉnh thành">
+                               </div>
+
+
+                      </div>
+                      <div class="col l-6">
+                       <div class="form-group "> 
+                           <input class="form-control required" name="username" type="text" placeholder="Họ và tên" autocomplete="false" aria-required="true">
+                       </div>
+       
+                       <div class="form-group "> 
+                           <input class="form-control required" name="password" type="password" placeholder="Tên đăng nhập" autocomplete="false" aria-required="true">
+                       </div>
+       
+                       <div class="form-group "> 
+                       <input type="email" class="form-control required" name="email" placeholder="Số điện thoại">
+                       </div>
+
+                       <div class="form-group "> 
+                           <input type="text" class="form-control required" name="email" placeholder="Quận huyện">
+                       </div>
+
+
+                  </div>
+                   </div>
+
+                   
+               </div>
+
+              
+
+              <div class="form-group "> 
+               <input type="text" class="form-control required" name="email" placeholder="Địa chỉ">
+              </div>
+
+              <div class="form-group"> 
+               <img src="https://fs-07.web4s.vn/contact/ContactPlugin/captcha?type=image&amp;model=CaptchaModel&amp;field=security_code&amp;width=120&amp;height=30&amp;theme=default&amp;length=6" vspace="2" class="captcha-img" alt="">
+               <a href="contact.html" class="captcha-reload"><i class=" icon-refresh fas fa-sync-alt"></i></a>
+               <div class="input text"><label for="captcha-input"><p></p></label><input name="data[CaptchaModel][security_code]" autocomplete="off" id="captcha-input" class="form-control captcha-input required" data-msg="Vui lòng nhập mã bảo vệ" placeholder="Mã bảo vệ" type="text" aria-required="true"></div>
+             </div>
+             <div class="form-group"> 
+               <div class="grid">
+                   <div class="row">
+                       <div class="col l-4">
+                           <button class="bt btn-default txt-upper btn-submit " type="submit"> 
+                               <span class="name"> ĐĂNG KÝ </span>
+                           </button>
+                           
+                       
+                       </div>
+                       <div class="col l-4">
+                           <button class="bt btn-default txt-upper btn-submit  " type="submit"> 
+                               <span class="name"> HỦY BỎ</span>
+                           </button>
+                           
+                       
+                       </div>
+                   </div>
+              </div>
+           </div>
+
+                 
+          </form>
+
+       </div>
+   </div>
+
+
+</div>
+  
+
+       <div class="modal ">
+        <div class="menu-bar">
+            <h2>MENU CHÍNH <i  class="close-menu-bar fas fa-times"></i></h2>
+            <ul class="menu-bar-list">
+                <li class="menu-bar-item"> <a href="index.html">Trang chủ</a>  </li>
+                <li class="menu-bar-item"> <a href="produce.html">Giới thiệu</a> </li>
+                <li class="menu-bar-item"> <a href="sanpham.html"> Sản phẩm</a> </li>
+                <li class="menu-bar-item"><a href="news.html"> Tin tức</a></li>
+                <li class="menu-bar-item"> <a href="collection.html"> Bộ sưu tập</a></li>
+                <li class="menu-bar-item"> <a href="contact.html"> Liên hệ</a></li>
+            </ul>
+        </div>
+    </div>
+
+  <!-- MODAL -->
+    <script>
+        var closeItemRegis = document.querySelector('.icon-modal-regis');
+    var closeItemLogin = document.querySelector('.icon-modal-login');
+    var loginContain = document.querySelector('.Login');
+    var regisContain = document.querySelector('.Regis');
+    var modals = document.querySelectorAll('.modal');
+    var login = document.querySelectorAll('.dang-nhap');
+    var regis = document.querySelectorAll('.dang-ky');
+    
+    
+    login[0].onclick = function (e){
+e.preventDefault();
+modals[0].classList.add('active');
+
+}
+
+regis[0].onclick = function (e){
+e.preventDefault();
+modals[1].classList.add('active');
+
+
+
+
+}
+
+login[1].onclick = function (e){
+    e.preventDefault();
+    modals[0].classList.add('active');
+    
+    }
+    
+    regis[1].onclick = function (e){
+    e.preventDefault();
+    modals[1].classList.add('active');
+    
+    
+    
+    
+    }
+    
+    closeItemRegis.onclick = function(){
+    
+    modals[1].classList.remove('active');
+    }
+    closeItemLogin.onclick = function(){
+    
+    modals[0].classList.remove('active');
+    }
+    
+    modals[0].onclick = function (){
+    modals[0].classList.remove('active');
+    
+    }
+    
+    modals[1].onclick = function (){
+        modals[1].classList.remove('active');
+        
+        }
+    loginContain.onclick = function(e){
+    e.stopPropagation();
+    }
+    regisContain.onclick = function(e){
+    e.stopPropagation();
+    }
+    </script>
+
+
+
+    
+    
+<script>
+
+    //menu bar
+var modals = document.querySelectorAll('.modal');
+var barBtn = document.querySelector('.bar-mobile');
+var closeMenuBar = document.querySelector('.close-menu-bar');
+barBtn.onclick = function (e){
+    e.preventDefault();
+    modals[2].classList.add('active');
+
+}
+closeMenuBar.onclick = function (){
+    modals[2].classList.remove('active');
+}
+</script>
+
+<script>
+    //O TIM KIEM
+
+var search = document.querySelector('.search-link');
+var searchWrap = document.querySelector('.header-timkiem-wrap');
+
+search.onclick = function (e){
+   e.preventDefault();
+   searchWrap.classList.add("active")
+  
+    search.onclick = function (e){
+   
+       searchWrap.classList.remove("active");
+      
+      
+    }
+
+}
+
+
+var cart = document.querySelector('.cart-link');
+var cartWrap = document.querySelector('.header-cart');
+
+cart.onclick = function (e){
+   e.preventDefault();
+   cartWrap.classList.add("active")
+  
+    cart.onclick = function (e){
+   
+       cartWrap.classList.remove("active");
+      
+      
+    }
+
+}
+
+</script>
+      
+</body>
+</html>
+    
+      
+

@@ -1,0 +1,249 @@
+ /* Mobile and tablet */
+
+
+@media (max-width:1023px){
+    
+    .hide-on-mobile{
+        display: none;
+    }
+    .header__navbar{
+        justify-content: center;
+        align-items: center;
+        height: 51px;
+        
+    }
+    .header__navbar-item{
+        display: inline-block;
+        text-align: center;
+    }
+    .header{
+        height: auto;
+    }
+    .header__navbar-item-link{
+        display: inline-block;
+        line-height: 58.67px;
+       
+    }
+    .header__navbar-list__mobile{
+        padding: 0 4px;
+        
+    }
+    .logo__on-mobile{
+        height: 51px;
+        text-align: center;
+        
+    }
+    .logo__on-mobile-wrap{
+        height: 51px;
+    }
+    .pd-mobile{
+        padding: 10px 0;
+    }
+    .three-icon-mobile{
+        float: right;
+    }
+    .pd-right-mobile{
+        padding-right: 10px;
+    }
+    .header__navbar-logo-link{
+        height: 51px;
+        display: inline-block;
+    }
+    
+    .icon-right, .icon-left{
+        font-size: 60px;
+    }
+    .ul-wrap{
+       flex-direction: column;
+        
+    }
+    .pd-body{
+        padding: 0 10px;
+    }
+    
+   
+    .daylung__img{
+        height: 300px;
+        width: 180px;
+        
+        
+        
+    }
+    .wrapper__footer{
+        flex-direction: column;
+    }
+    .prev-icon{
+        position: absolute;
+        top:50%;
+        font-size: 60px;
+        width: 120px;
+        height: 120px;
+        margin-top: -60px;
+        left: 80px;
+        outline: none;
+        border: none;
+        opacity: 0.4;
+        cursor: pointer;
+        color: orange;
+        
+    }
+    .next-icon{
+        position: absolute;
+        top:50%;
+        font-size: 60px;
+        width: 120px;
+        height: 120px;
+        margin-top: -60px;
+        right: 6px;
+        outline: none;
+        border: none;
+        opacity: 0.4;
+        cursor: pointer;
+        color: orange;
+        
+    }
+    .Regis{
+        width: 500px;
+    }
+    .pd-left{
+        padding-left: 10px;
+
+    }
+    .pd-right{
+        padding-right: 10px;
+
+    }
+    .mg-top-on-mobile{
+        margin-top: 80px;
+    }
+    .menu-bar{
+        width: 80%;
+        max-width: 400px;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        overflow: auto;
+        background: #fff;
+        border-right: 1px solid #ddd;
+        z-index: 10000;
+    }
+    .menu-bar h2{
+        background-color: #231f20;
+        padding: 15px 15px;
+        font-size: 16px;
+        color: #fff;
+        margin: 0;
+        display: block;
+    }
+    .menu-bar  i {
+        float:right
+    }
+    .menu-bar-list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu-bar-list a{
+        
+        color: #333333;
+        padding: 0px 20px 0px 10px;
+        height: 46px;
+        font-size: 18px;
+        text-decoration: none;
+        line-height: 46px;
+        color: #333;
+        display: block;
+    }
+    .menu-bar-list li{
+        border-bottom: 0.05px solid #888;
+       
+
+    }
+    
+    
+    
+    
+   
+}
+/* PC */
+@media (min-width: 1113px){
+    .hide-on-pc{
+        display: none;
+    }
+    .product__news-img{
+        width: 300px;
+    }
+}
+
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+   
+    .item__heading h4, .item__heading h5{
+        font-size: 18px;
+    }
+    .fl-right{
+        float: right;
+    }
+    .content__row-ND{
+        width: 60%;
+    }
+    .next-icon{
+        right: -10%;
+    }
+    .prev-icon{
+        left: -10%;
+    }
+    .item img{
+        height: 200px;
+    }
+   
+}
+
+/* Mobile */
+@media (max-width: 739px){
+    .hide{
+        display: none;
+    }
+    .content__row-ND{
+        position: relative;
+        width: 100%;
+    }
+   
+    .background-img{
+        position: relative;
+      
+      
+    }
+    .next-icon{
+        top:30%;
+
+    }
+    .prev-icon{
+        top:30%
+
+    }
+    .daylung__img {
+        object-fit: contain;
+    }
+    .Regis{
+        width: 300px;
+       
+       
+    }
+    .item img{
+        height: 150px;
+    }
+    .owl-nav i{
+        font-size: 40px;
+        
+      
+    }
+    .owl-next , .owl-prev{
+       background: none !important;
+    }
+   
+  
+}
