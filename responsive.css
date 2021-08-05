@@ -244,6 +244,10 @@
     .owl-next , .owl-prev{
        background: none !important;
     }
+    .product__sport-img{
+        object-fit: contain;
+       
+    }
    
   
 }
