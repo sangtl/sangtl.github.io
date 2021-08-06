@@ -1052,6 +1052,9 @@ html,body{
     cursor: pointer;
     background-color: orange;
 }
+.app{
+    overflow: hidden;
+}
 
 
 /* MODAL */
