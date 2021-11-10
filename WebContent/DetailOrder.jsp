@@ -18,16 +18,26 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
+<style>
+
+body {
+font-size: 1.5rem;
+}
+</style>
+
 <body>
+ 	<jsp:include page="Menu.jsp"></jsp:include>
 
  <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
      <div class="card">
          <div class="card-header p-4">
+         <h3 class="text-center">ORDER</h3>
             
-             <div class="float-right">
-                 <h3 class="mb-0">ORDER</h3>
+             
+                 <h3 class="text-center text-success">Mua Hàng Thành Công !</h3>
                  
-             </div>
+                 
+             
          </div>
          <div class="card-body">
              <div class="row mb-4">
