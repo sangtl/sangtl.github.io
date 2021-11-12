@@ -7,8 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
+import entity.Account;
 
 @WebServlet(name = "DeleteAccountControl", urlPatterns = {"/deleteAccount"})
 public class DeleteAccountControl  extends HttpServlet {
@@ -24,7 +26,9 @@ public class DeleteAccountControl  extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String uid = request.getParameter("uid");
         DAO dao = new DAO();
-        dao.deleteAccount(uid);
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("acc");
+        dao.deleteAccount(a,uid);
         response.sendRedirect("manage");
 }
 

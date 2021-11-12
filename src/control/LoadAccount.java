@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
 import entity.Account;
@@ -27,8 +28,12 @@ public class LoadAccount extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("uid");
+        
         DAO dao = new DAO();
-        Account a = dao.getAccountByID(id);
+
+        HttpSession session = request.getSession();
+        Account account = (Account) session.getAttribute("acc");
+        Account a = dao.getAccountByID(account,id);
         
         request.setAttribute("account", a);
         

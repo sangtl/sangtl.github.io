@@ -35,7 +35,7 @@ public class ManagerControl extends HttpServlet {
         
        
        
-        List<Product> list = dao.getProductBySaleID(id);
+        List<Product> list = dao.getProductBySaleID(a,id);
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listP", list);
         request.setAttribute("listCC", listC);

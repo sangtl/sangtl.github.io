@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
+import entity.Account;
 import entity.Category;
 import entity.Product;
 
@@ -23,8 +25,10 @@ public class DetailControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("pid");
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("acc");
         DAO dao = new DAO();
-        Product p = dao.getProductByID(id);
+        Product p = dao.getProductByID(a,id);
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         request.setAttribute("listCC", listC);

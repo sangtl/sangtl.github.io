@@ -70,11 +70,11 @@ public class DAO {
     
     
     
-    public List<Product> getProductByCID(String cid) {
+    public List<Product> getProductByCID(Account account,String cid) {
         List<Product> list = new ArrayList<>();
         String query = "select * from Product\n" +"Where cateID =?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, cid);
             rs = ps.executeQuery();
@@ -133,11 +133,11 @@ public class DAO {
         return null;
     }
     
-    public Product getProductByID(String pid) {
+    public Product getProductByID(Account account ,String pid) {
       
         String query = "select * from Product\n" +"Where id =?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, pid);
             rs = ps.executeQuery();
@@ -154,11 +154,11 @@ public class DAO {
        return null;
     }
     
-    public Account getAccountByID(String uid) {
+    public Account getAccountByID(Account account,String uid) {
         
         String query = "select * from Account\n" +"Where uid =?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, uid);
             rs = ps.executeQuery();
@@ -448,10 +448,10 @@ public class DAO {
 //        return list;
 //    }
     
-    public List<Product> getProductBySaleID(int id) {
+    public List<Product> getProductBySaleID(Account account,int id) {
         List<Product> list = new ArrayList<>();
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             CallableStatement stmt = conn.prepareCall("{call sp_getProductBySaleID(?) }");
             stmt.setInt(1,id);
             rs = stmt.executeQuery();
@@ -468,9 +468,9 @@ public class DAO {
         return list;
     }
     
- public void deleteProduct(String pid) {
+ public void deleteProduct(Account account,String pid) {
     	 try {
-             conn = new DBContext().getConnection();//mo ket noi voi sql
+             conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
              CallableStatement stmt = conn.prepareCall("{call sp_DeleteProduct(?) }");
              stmt.setString(1, pid);
              stmt.execute();
@@ -480,9 +480,9 @@ public class DAO {
          }
  }
  
- public void deleteAccount(String uid) {
+ public void deleteAccount(Account account,String uid) {
  	 try {
-          conn = new DBContext().getConnection();//mo ket noi voi sql
+          conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
           CallableStatement stmt = conn.prepareCall("{call sp_DeleteAccount(?) }");
           stmt.setString(1, uid);
           stmt.execute();
@@ -508,14 +508,14 @@ public class DAO {
    	 
     }
     
-    public void insertProduct(String name, String image, String price,
+    public void insertProduct(Account account,String name, String image, String price,
             String title, String description, String category, int sid) {
 //        String query = "INSERT [dbo].[Product] \n"
 //                + "([name], [image], [price], [title], [description], [cateID], [sale_ID])\n"
 //                + "VALUES(?,?,?,?,?,?,?)";
         try {
         
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
 //            ps = conn.prepareStatement(query);
         	CallableStatement stmt = conn.prepareCall("{call sp_InsertProduct(?,?,?,?,?,?,?) }");
 //  	        ResultSet rs = stmt.executeQuery();
@@ -566,13 +566,13 @@ public class DAO {
 		}
 }
     
-    public void insertContact(String name, String email, String message
+    public void insertContact(Account account,String name, String email, String message
            ) {
         String query = "INSERT [dbo].[Contact] \n"
                 + "([name], [email], [message])\n"
                 + "VALUES(?,?,?)";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, name);
             ps.setString(2, email);
@@ -588,11 +588,11 @@ public class DAO {
     
    
     
-    public void insertAccount(String user, String pass, String isSell,
+    public void insertAccount(Account account,String user, String pass, String isSell,
            String isAdmin) {
     	
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             CallableStatement stmt = conn.prepareCall("{call sp_InsertAccount(?,?,?,?) }");
             stmt.setString(1, user);
             stmt.setString(2, pass);
@@ -605,10 +605,10 @@ public class DAO {
     }
     
 
-    public void editProduct(String name, String image, String price,
+    public void editProduct(Account account,String name, String image, String price,
             String title, String description, String category, String pid, int sid) {
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             CallableStatement stmt = conn.prepareCall("{call sp_UpdateProduct(?,?,?,?,?,?,?,?) }");
 //	        ResultSet rs = stmt.executeQuery();
             stmt.setString(1, pid);
@@ -664,11 +664,11 @@ public class DAO {
 //    }
     
     
-    public void editAccount( String user, String pass,
+    public void editAccount(Account account, String user, String pass,
             String isSell, String isAdmin,String uid) {
                 
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             CallableStatement stmt = conn.prepareCall("{call sp_UpdateAccount(?,?,?,?,?) }");
             stmt.setString(1, uid);
             stmt.setString(2, user);

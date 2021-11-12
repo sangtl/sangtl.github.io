@@ -38,7 +38,7 @@ public class EditControl extends HttpServlet {
 	        
 	        
 	        DAO dao = new DAO();
-	        dao.editProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, pid, sid);
+	        dao.editProduct(a,pname, pimage, pprice, ptitle, pdescription, pcategory, pid, sid);
 	        response.sendRedirect("manager");
 	 }
 	 

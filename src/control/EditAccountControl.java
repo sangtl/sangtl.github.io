@@ -7,9 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
+import entity.Account;
 
 
 @WebServlet(name = "EditAccountControl", urlPatterns = {"/editAccount"})
@@ -31,10 +32,12 @@ public class EditAccountControl extends HttpServlet {
 	       
 	        
 	     
-	        
+
+	        HttpSession session = request.getSession();
+	        Account a = (Account) session.getAttribute("acc");
 	        
 	        DAO dao = new DAO();
-	        dao.editAccount(aname, apass, aisSell, aisAdmin,aid);
+	        dao.editAccount(a,aname, apass, aisSell, aisAdmin,aid);
 	        response.sendRedirect("manage");
 	 }
 	 

@@ -53,7 +53,7 @@ public class AddControl extends HttpServlet {
         
         
         DAO dao = new DAO();
-        dao.insertProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, sid);
+        dao.insertProduct(a,pname, pimage, pprice, ptitle, pdescription, pcategory, sid);
         response.sendRedirect("manager");
     }
 
