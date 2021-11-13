@@ -66,9 +66,13 @@ public class GetOrderControl extends HttpServlet {
 	       request.setAttribute("lst", list);
 	       
 	       for (Cookie o : arr) {
+	    	   if (o.getName().equals("id")) {
+	    	    
 	            o.setMaxAge(0);
 	            response.addCookie(o);
-	        }
+	    	   }
+	    	   }
+	        
 	        
 	       
 	       

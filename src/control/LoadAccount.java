@@ -31,9 +31,7 @@ public class LoadAccount extends HttpServlet {
         
         DAO dao = new DAO();
 
-        HttpSession session = request.getSession();
-        Account account = (Account) session.getAttribute("acc");
-        Account a = dao.getAccountByID(account,id);
+        Account a = dao.getAccountByID(id);
         
         request.setAttribute("account", a);
         

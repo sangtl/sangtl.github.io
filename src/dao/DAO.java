@@ -592,7 +592,7 @@ public class DAO {
            String isAdmin) {
     	
         try {
-            conn = new DBContext().getConnection(account.getUser(),account.getPass());//account.getUser(),account.getPass());//mo ket noi voi sql
+            conn = new DBContext().getConnection();
             CallableStatement stmt = conn.prepareCall("{call sp_InsertAccount(?,?,?,?) }");
             stmt.setString(1, user);
             stmt.setString(2, pass);
@@ -754,10 +754,10 @@ public class DAO {
 
    public static void main(String[] args) {
 	      Account acc= new Account();
-	      acc.setUser("sang");
-	      acc.setPass("1234");
+	      acc.setUser("sa");
+	      acc.setPass("123456");
           DAO dao = new DAO();
-          dao.insertAccount(acc,"phong", "123", "1", "1");
+          dao.insertAccount(acc,"phong11", "123", "1", "1");
 //          List<Product> lst = new ArrayList<Product>();
 //          Product p = dao.getProduct("1");
 //          lst.add(p);
