@@ -111,7 +111,7 @@
                     <nav class="header__menu">
                     
                <ul >
-	               <c:if test="${sessionScope.acc.isAdmin == 1}">
+	               <c:if test="${sessionScope.acc.isAdmin == 1||sessionScope.acc.isAdmin == 2}">
 	                <li >
 	                    <a  href="manage">Manager Account</a>
 	                </li>

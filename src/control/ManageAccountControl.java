@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
 import entity.Account;
@@ -39,7 +39,9 @@ public class ManageAccountControl extends HttpServlet  {
         if(count % 6!=0) {
         	endPage++;
         }
-        List<Account> list = dao.pagingAccount(index);
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("acc");
+        List<Account> list = dao.pagingAccount(a,index);
        
         
         request.setAttribute("listA", list);

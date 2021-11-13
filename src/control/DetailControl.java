@@ -25,10 +25,9 @@ public class DetailControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("pid");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("acc");
+        
         DAO dao = new DAO();
-        Product p = dao.getProductByID(a,id);
+        Product p = dao.getProductByID(id);
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         request.setAttribute("listCC", listC);

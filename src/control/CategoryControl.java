@@ -30,11 +30,10 @@ public class CategoryControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String cateID = request.getParameter("cid");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("acc");
+        
    
         DAO dao = new DAO();
-        List<Product> list = dao.getProductByCID(a,cateID);
+        List<Product> list = dao.getProductByCID(cateID);
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         

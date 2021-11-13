@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -45,10 +46,11 @@ public class AddAccountControl extends HttpServlet {
         String apass= request.getParameter("PassWord");
         String isSell = request.getParameter("IsSell");
         String isAdmin = request.getParameter("IsAdmin");
-       
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("acc");
         
         DAO dao = new DAO();
-        dao.insertAccount(aname, apass, isSell, isAdmin);
+        dao.insertAccount(a,aname, apass, isSell, isAdmin);
         response.sendRedirect("manage");
     }
 

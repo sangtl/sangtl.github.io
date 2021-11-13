@@ -70,11 +70,11 @@ public class DAO {
     
     
     
-    public List<Product> getProductByCID(Account account,String cid) {
+    public List<Product> getProductByCID(String cid) {
         List<Product> list = new ArrayList<>();
         String query = "select * from Product\n" +"Where cateID =?";
         try {
-            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
+            conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, cid);
             rs = ps.executeQuery();
@@ -133,11 +133,11 @@ public class DAO {
         return null;
     }
     
-    public Product getProductByID(Account account ,String pid) {
+    public Product getProductByID(String pid) {
       
         String query = "select * from Product\n" +"Where id =?";
         try {
-            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
+            conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, pid);
             rs = ps.executeQuery();
@@ -154,11 +154,11 @@ public class DAO {
        return null;
     }
     
-    public Account getAccountByID(Account account,String uid) {
+    public Account getAccountByID(String uid) {
         
         String query = "select * from Account\n" +"Where uid =?";
         try {
-            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
+            conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, uid);
             rs = ps.executeQuery();
@@ -398,13 +398,13 @@ public class DAO {
     
    
     
-    public List<Account> pagingAccount(int index) {
+    public List<Account> pagingAccount(Account account,int index) {
         List<Account> list = new ArrayList<>();
         String query = "select * from Account\n"
         		+"ORDER BY uid\n"
         		+"OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1,(index-1)*6);
             rs = ps.executeQuery();
@@ -592,7 +592,7 @@ public class DAO {
            String isAdmin) {
     	
         try {
-            conn = new DBContext().getConnection(account.getUser(),account.getPass());//mo ket noi voi sql
+            conn = new DBContext().getConnection(account.getUser(),account.getPass());//account.getUser(),account.getPass());//mo ket noi voi sql
             CallableStatement stmt = conn.prepareCall("{call sp_InsertAccount(?,?,?,?) }");
             stmt.setString(1, user);
             stmt.setString(2, pass);
@@ -601,6 +601,7 @@ public class DAO {
           
             stmt.execute();
         } catch (Exception e) {
+        	e.printStackTrace();
         }
     }
     
@@ -752,13 +753,17 @@ public class DAO {
     
 
    public static void main(String[] args) {
+	      Account acc= new Account();
+	      acc.setUser("sang");
+	      acc.setPass("1234");
           DAO dao = new DAO();
-          List<Product> lst = new ArrayList<Product>();
-          Product p = dao.getProduct("1");
-          lst.add(p);
-          
-          
-          dao.saveOrder("6", lst);
+          dao.insertAccount(acc,"phong", "123", "1", "1");
+//          List<Product> lst = new ArrayList<Product>();
+//          Product p = dao.getProduct("1");
+//          lst.add(p);
+//          
+//          
+//          dao.saveOrder("6", lst);
           
 //          List<Product> list = dao.getViewProduct();
 //        List<Product> list1 = dao.getProductByCID("3");
