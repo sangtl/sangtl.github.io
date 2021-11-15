@@ -592,12 +592,15 @@ public class DAO {
            String isAdmin) {
     	
         try {
-            conn = new DBContext().getConnection();
-            CallableStatement stmt = conn.prepareCall("{call sp_InsertAccount(?,?,?,?) }");
-            stmt.setString(1, user);
-            stmt.setString(2, pass);
-            stmt.setString(3, isSell);
-            stmt.setString(4, isAdmin);
+	        	if(account.getIsAdmin() == 2) {
+	        		conn = new DBContext().getConnection();
+	        	}
+	        	conn = new DBContext().getConnection(account.getUser(),account.getPass());
+	            CallableStatement stmt = conn.prepareCall("{call sp_InsertAccount(?,?,?,?) }");
+	            stmt.setString(1, user);
+	            stmt.setString(2, pass);
+	            stmt.setString(3, isSell);
+	            stmt.setString(4, isAdmin);
           
             stmt.execute();
         } catch (Exception e) {
