@@ -592,10 +592,11 @@ public class DAO {
            String isAdmin) {
     	
         try {
+        		conn = new DBContext().getConnection(account.getUser(),account.getPass());
 	        	if(account.getIsAdmin() == 2) {
 	        		conn = new DBContext().getConnection();
 	        	}
-	        	conn = new DBContext().getConnection(account.getUser(),account.getPass());
+	        	
 	            CallableStatement stmt = conn.prepareCall("{call sp_InsertAccount(?,?,?,?) }");
 	            stmt.setString(1, user);
 	            stmt.setString(2, pass);
