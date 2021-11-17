@@ -34,7 +34,7 @@ font-size: 1.5rem;
          <h3 class="text-center">ORDER</h3>
             
              
-                 <h3 class="text-center text-success">Mua Hàng Thành Công !</h3>
+                 <h3 class="text-center text-success">${message}</h3>
                  
                  
              

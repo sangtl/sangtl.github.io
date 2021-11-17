@@ -61,9 +61,16 @@ public class GetOrderControl extends HttpServlet {
 	        
 	       dao.saveOrder(String.valueOf(uid) , list);
 	       Order order = new Order();
+	       String mess = "Thanh toán thành công !";
 	       order = dao.getLastOrder();
+	       if(order.getUid()!=uid) {
+	    	   order = null;
+	    	   list = null;
+	    	   mess = "Thanh toán thất bại !";
+	       }
 	       request.setAttribute("order", order);
 	       request.setAttribute("lst", list);
+	       request.setAttribute("message", mess);
 	       
 	       for (Cookie o : arr) {
 	    	   if (o.getName().equals("id")) {
