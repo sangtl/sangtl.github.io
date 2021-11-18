@@ -63,12 +63,21 @@ public class GetOrderControl extends HttpServlet {
 	       Order order = new Order();
 	       String mess = "Thanh toán thành công !";
 	       order = dao.getLastOrder();
-	       
-	       if(order.getUid()!=uid) {
-	    	   order = null;
-	    	   list = null;
+           if(order != null) {
+		       if( order.getUid()!=uid) {
+		    	   order = null;
+		    	   list = null;
+		    	   mess = "Thanh toán thất bại !";
+		       }
+           }
+           else
+           {
+        	   order = null;
+        	   list = null;
 	    	   mess = "Thanh toán thất bại !";
-	       }
+           }
+	 
+	       
 	       request.setAttribute("order", order);
 	       request.setAttribute("lst", list);
 	       request.setAttribute("message", mess);
