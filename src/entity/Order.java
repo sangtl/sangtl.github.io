@@ -3,8 +3,8 @@ package entity;
 import java.sql.Date;
 
 public class Order {
+	int oid;
 	int uid;
-	int pid;
 	int totalQuantity;
 	double totalMoney;
 	Date purchaseDate;
@@ -17,10 +17,10 @@ public class Order {
 		
 	}
 	
-	public Order(int uid, int pid, int totalQuantity, double totalMoney, Date purchaseDate, String address,
+	public Order(int oid, int uid, int totalQuantity, double totalMoney, Date purchaseDate, String address,
 			String email, String phone, String status) {
+		this.oid = oid;
 		this.uid = uid;
-		this.pid = pid;
 		this.totalQuantity = totalQuantity;
 		this.totalMoney = totalMoney;
 		this.purchaseDate = purchaseDate;
@@ -29,18 +29,23 @@ public class Order {
 		this.phone = phone;
 		this.status = status;
 	}
+
+	public int getOid() {
+		return oid;
+	}
+
+	public void setOid(int oid) {
+		this.oid = oid;
+	}
+
 	public int getUid() {
 		return uid;
 	}
+
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
-	public int getPid() {
-		return pid;
-	}
-	public void setPid(int pid) {
-		this.pid = pid;
-	}
+
 	public int getTotalQuantity() {
 		return totalQuantity;
 	}
@@ -87,7 +92,7 @@ public class Order {
 	
 	@Override
 	public String toString() {
-		return "Order [uid=" + uid + ", pid=" + pid + ", totalQuantity=" + totalQuantity + ", totalMoney=" + totalMoney
+		return "Order [uid=" + oid + ", pid=" + uid + ", totalQuantity=" + totalQuantity + ", totalMoney=" + totalMoney
 				+ ", purchaseDate=" + purchaseDate + ", address=" + address + ", email=" + email + ", phone=" + phone
 				+ ", status=" + status + "]";
 	}
