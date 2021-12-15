@@ -1,9 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Footer -->
 <style>
-h5,p{
-color: #6f6f6f;
-}
+
 </style>
 <footer class="text-light">
     <div class="container">

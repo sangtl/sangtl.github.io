@@ -49,9 +49,9 @@ public class HomeControl extends HttpServlet {
         	indexPage = "1";
         }
         int index = Integer.parseInt(indexPage);
-       DAO dao = new DAO();
+        DAO dao = new DAO();
         int count = dao.getTotalProduct();
-      int endPage = count/6;
+        int endPage = count/6;
         if(count % 6!=0) {
         	endPage++;
         }

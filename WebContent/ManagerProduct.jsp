@@ -85,6 +85,7 @@
                         
             </div>
             <a href="home"><button type="button" class="btn btn-primary">Back to home</button></a>
+            <hr></hr>
 
         </div>
         <!-- Edit Modal HTML -->

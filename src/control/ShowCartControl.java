@@ -19,6 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author trinh
+ */
 @WebServlet(name = "ShowCartControl", urlPatterns = {"/print"})
 public class ShowCartControl extends HttpServlet {
 
@@ -42,9 +46,6 @@ public class ShowCartControl extends HttpServlet {
                 }
             }
         }
-        for (Product s : list) {
-        	System.out.println("Product: " + s);
-        }
         for (int i = 0; i < list.size(); i++) {
             int count = 1;
             for (int j = i+1; j < list.size(); j++) {
@@ -62,19 +63,20 @@ public class ShowCartControl extends HttpServlet {
             total = total + o.getAmount() * o.getPrice();
             amout = amout + o.getAmount();
         }
-     
+        HttpSession session = request.getSession();
+        session.setAttribute("a", amout);
+       
         request.setAttribute("list", list);
         request.setAttribute("amout", amout);
         request.setAttribute("total", total);
       
         request.setAttribute("vat", 0.1 * total);
-        request.setAttribute("sum", 1.1 * total);
+        request.setAttribute("sum", total);
        
        
        
         
         request.getRequestDispatcher("Cart.jsp").forward(request, response);
-       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

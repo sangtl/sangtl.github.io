@@ -44,7 +44,6 @@ public class MyAccountControl extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        String user_name = request.getParameter("username");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
         int sid = a.getUid();

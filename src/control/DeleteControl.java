@@ -7,10 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.DAO;
-import entity.Account;
 
 @WebServlet(name = "DeleteControl", urlPatterns = {"/delete"})
 public class DeleteControl extends HttpServlet {
@@ -23,10 +21,8 @@ public class DeleteControl extends HttpServlet {
 	            throws ServletException, IOException {
 	        response.setContentType("text/html;charset=UTF-8");
 	        String pid = request.getParameter("pid");
-	        HttpSession session = request.getSession();
-	        Account a = (Account) session.getAttribute("acc");
 	        DAO dao = new DAO();
-	        dao.deleteProduct(a,pid);
+	        dao.deleteProduct(pid);
 	        response.sendRedirect("manager");
 	}
 	

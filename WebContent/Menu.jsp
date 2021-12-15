@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="header/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="header/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="header/css/style.css" type="text/css">
+    <script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/618547126bb0760a49414d74/1fjo9r90n';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script>
     
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
@@ -111,10 +122,14 @@
                     <nav class="header__menu">
                     
                <ul >
-	               <c:if test="${sessionScope.acc.isAdmin == 1||sessionScope.acc.isAdmin == 2}">
+	               <c:if test="${sessionScope.acc.isAdmin == 1}">
 	                <li >
 	                    <a  href="manage">Manager Account</a>
 	                </li>
+	                <li >
+	                    <a  href="doanhthu">Revenue</a>
+	                </li>
+	                
 	                </c:if>
 	                 <c:if test="${sessionScope.acc.isSell == 1}">
 	                <li >
@@ -194,20 +209,6 @@
     <script src="header/js/mixitup.min.js"></script>
     <script src="header/js/owl.carousel.min.js"></script>
     <script src="header/js/main.js"></script>
-    
-    <!--Start of Tawk.to Script-->
-	<script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/618547126bb0760a49414d74/1fjo9r90n';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
-	</script>
-	<!--End of Tawk.to Script-->
        
 
 

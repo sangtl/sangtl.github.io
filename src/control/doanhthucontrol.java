@@ -6,78 +6,74 @@
 package control;
 
 import dao.DAO;
+import entity.Category;
+import entity.Order;
 import entity.Product;
 import java.io.IOException;
-
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author trinh
  */
-@WebServlet(name = "OrderControl", urlPatterns = {"/order"})
-public class OrderControl extends HttpServlet {
+@WebServlet(name = "doanhthucontrol", urlPatterns = {"/doanhthu"})
+public class doanhthucontrol extends HttpServlet {
 
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        Cookie arr[] = request.getCookies();
-        List<Product> list = new ArrayList<>();
-        DAO dao = new DAO();
-        
-        for (Cookie o : arr) {
-            if (o.getName().equals("id")) {
-                String txt[] = o.getValue().split("#");
-                for (String s : txt) {
-                    list.add(dao.getProduct(s));
-                }
-            }
-        }
-        
-        for (int i = 0; i < list.size(); i++) {
-            int count = 1;
-            for (int j = i+1; j < list.size(); j++) {
-                if(list.get(i).getId() == list.get(j).getId()){
-                    count++;
-                    list.remove(j);
-                    j--;
-                    list.get(i).setAmount(count);
-                }
-            }
-        }
-//        for (Cookie o : arr) {
-//            o.setMaxAge(0);
-//            response.addCookie(o);
-//        }
-        response.sendRedirect("getorder");
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
+	/**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+	 * @throws ParseException 
      */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException, ParseException {
+        response.setContentType("text/html;charset=UTF-8");
+        DAO dao = new DAO();
+      
+        int tongorder = dao.getSumOrder();
+        int tongdt =dao.TongDoanhThu();
+        List<Order> list = dao.getOrder();
+        request.setAttribute("listO", list);
+        request.setAttribute("tongdoanhthu", tongdt);
+        request.setAttribute("sumorder", tongorder);
+        
+        
+       
+        
+        
+       
+        request.getRequestDispatcher("doanhthu.jsp").forward(request, response);
+        
+     
+    }
+
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+			processRequest(request, response);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -91,7 +87,12 @@ public class OrderControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+			processRequest(request, response);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     /**

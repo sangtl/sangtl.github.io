@@ -6,7 +6,6 @@
 package control;
 
 import dao.DAO;
-import entity.Account;
 
 import java.io.IOException;
 
@@ -15,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 
 /**
@@ -48,11 +46,9 @@ public class AddContactControl extends HttpServlet {
         String message = request.getParameter("message");
       
         
-
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("acc");
+        
         DAO dao = new DAO();
-        dao.insertContact(a,name, email, message);
+        dao.insertContact(name, email, message);
        
             request.setAttribute("mes", "Success ! Thank you");
             request.getRequestDispatcher("Contact.jsp").forward(request, response);

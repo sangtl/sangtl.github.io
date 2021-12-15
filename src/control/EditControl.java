@@ -7,10 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import dao.DAO;
-import entity.Account;
 
 
 @WebServlet(name = "EditControl", urlPatterns = {"/edit"})
@@ -31,14 +30,12 @@ public class EditControl extends HttpServlet {
 	        String ptitle = request.getParameter("title");
 	        String pdescription = request.getParameter("description");
 	        String pcategory = request.getParameter("category");
-	        HttpSession session = request.getSession();
-	        Account a = (Account) session.getAttribute("acc");
-	        int sid = a.getUid();
+	        
 	     
 	        
 	        
 	        DAO dao = new DAO();
-	        dao.editProduct(a,pname, pimage, pprice, ptitle, pdescription, pcategory, pid, sid);
+	        dao.editProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, pid);
 	        response.sendRedirect("manager");
 	 }
 	 

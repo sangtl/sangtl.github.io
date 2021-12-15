@@ -171,7 +171,7 @@ a:focus
                         
                         
                         
-                        	 <li class="page-item  ">	<a href="home?index=${i}"  class="page-link ${tag1 == i?'active':''}">${i}</a></li>
+                        	 <li class="page-item">	<a href="home?index=${i}"  class="page-link ${tag1 == i?'active':''}">${i}</a></li>
                         </c:forEach>
                         <li class="page-item ${tag1 == endP?'disabled':''}"><a href="home?index=${tag1+1}" class="page-link">Next</a></li>
                     </ul>
